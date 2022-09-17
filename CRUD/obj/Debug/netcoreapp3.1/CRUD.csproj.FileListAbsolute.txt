@@ -154,3 +154,7 @@ C:\Users\vaibh\source\repos\CRUD\CRUD\obj\Debug\netcoreapp3.1\Razor\Views\Employ
 C:\Users\vaibh\source\repos\CRUD\CRUD\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Create.cshtml.g.cs
 C:\Users\vaibh\source\repos\CRUD\CRUD\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Delete.cshtml.g.cs
 C:\Users\vaibh\source\repos\CRUD\CRUD\obj\Debug\netcoreapp3.1\Razor\Views\Employee\Edit.cshtml.g.cs
+C:\Users\vaibh\source\repos\CRUD\CRUD\obj\Debug\netcoreapp3.1\Razor\Views\Upload\UploadImage.cshtml.g.cs
+C:\Users\vaibh\source\repos\CRUD\CRUD\obj\Debug\netcoreapp3.1\Razor\Views\Upload\Index.cshtml.g.cs
+C:\Users\vaibh\source\repos\CRUD\CRUD\obj\Debug\netcoreapp3.1\Razor\Views\Upload\Delete.cshtml.g.cs
+C:\Users\vaibh\source\repos\CRUD\CRUD\obj\Debug\netcoreapp3.1\Razor\Views\Upload\Edit.cshtml.g.cs

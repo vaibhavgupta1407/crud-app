@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CRUD.Models.Image>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <p class="text-center text-success">@TempData["error"]</p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center">
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                @foreach (var d in Model)
+                {
+                    <tr class="text-center">
+                        <td>@d.Id</td>
+                        <td>@d.Name</td>
+                        <td><img src="@d.ImagePath" height="100px;" width="100px;" /></td>
+                        <td>
+                            <a class=" btn btn-sm btn-warning " asp-controller="Upload" asp-action="Edit" asp-route-id="@d.Id">Edit</a>
+                            <a class=" btn btn-sm btn-danger " asp-controller="Upload" asp-action="Delete" asp-route-id="@d.Id">Delete</a>
+
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
