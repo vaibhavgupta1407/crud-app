@@ -1,4 +1,5 @@
 using CRUD.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +30,24 @@ namespace CRUD
             services.AddDbContext<ApplicationContext>(option => {
                 option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
                 });
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(option => 
+                    {
+                        option.ExpireTimeSpan= TimeSpan.FromMinutes(60 * 1);
+                        option.LoginPath = "/Account/Login";
+                        option.AccessDeniedPath = "/Account/Login";
+             });
+            services.AddSession(option =>
+            {
+                option.IdleTimeout = TimeSpan.FromMinutes(5);
+                option.Cookie.HttpOnly = true;
+                option.Cookie.IsEssential = true;
+            });
+        }
+
+        private void AddCookie(Action<object> p)
+        {
+            throw new NotImplementedException();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,7 +67,8 @@ namespace CRUD
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseSession();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

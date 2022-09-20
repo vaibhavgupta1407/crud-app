@@ -1,4 +1,5 @@
 ﻿using CRUD.Models;
+using CRUD.Models.Account;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,6 @@ namespace CRUD.Data
         public ApplicationContext(DbContextOptions<ApplicationContext>options) : base(options) { }
         public DbSet<employee> Employees { get; set; }
         public DbSet<Image> Images { get; set; }
+        public DbSet<User> users { get; set; }
     }
 }

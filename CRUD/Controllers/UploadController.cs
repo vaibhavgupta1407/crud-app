@@ -1,6 +1,7 @@
 ﻿using CRUD.Data;
 using CRUD.Models;
 using CRUD.Models.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace CRUD.Controllers
 {
+    [Authorize]
     public class UploadController : Controller
     {
         private readonly ApplicationContext context;
@@ -50,6 +52,7 @@ namespace CRUD.Controllers
                 return View(model);
             }
         }
+        [AllowAnonymous]
         public void UploadFile(IFormFile file, string path)
         {
             FileStream stream = new FileStream(path, FileMode.Create);

@@ -1,0 +1,56 @@
+﻿@model CRUD.Models.ViewModel.SignUpViewModel
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout_LogIn.cshtml";
+}
+<span>@TempData["error message" +
+     ""]</span>
+<div class="container col-md-8 offset-2 mt-lg-5" style="border:solid 1px skyblue;">
+        <div class="text-center">
+            <h1 class="text-info showing " style="font-family:'Comic Sans MS';font-weight:bolder;">User Registration Form</h1>
+        </div>
+    <hr class="text-primary"/>
+        
+        <div class="col-md-10 offset-1 card mt-5 mb-lg-4 shadow align-content-center ">
+            <div class="boder boder-primary rounded" style="text-shadow:initial;">
+                <div class="card-body">
+                    <form method="post" asp-action="Register">
+                        <div class="form-group">
+                            <label asp-for="Username"></label>
+                            <input type="text" asp-for="Username" placeholder="Enter UserName" class=" form-control bg-light" autocomplete="off" />
+                            <span class="text-danger " asp-validation-for="Username"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input type="email" asp-for="Email " placeholder="Enter Your Email" class=" form-control bg-light" autocomplete="off" />
+                            <span class="text-danger " asp-validation-for="Email"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Mobile "></label>
+                            <input type="tel" asp-for="Mobile  " placeholder="Enter Your Mobile number" class=" form-control bg-light" autocomplete="off" />
+                            <span class="text-danger " asp-validation-for="Mobile"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input type="password" asp-for="Password " placeholder="Enter Password" class=" form-control bg-light" autocomplete="off" />
+                            <span class="text-danger " asp-validation-for="Password"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="ConfirmPassword"></label>
+                            <input type="password" asp-for="ConfirmPassword " placeholder="Enter Confirm Password" class=" form-control bg-light" autocomplete="off" />
+                            <span class="text-danger " asp-validation-for="ConfirmPassword"></span>
+                        </div>
+                        <div class="form-group">
+
+                            <input type="submit" class="btn btn-success btn-lg mb-1  mb-lg-2 form-control " value="Register" />
+                        </div>
+                        <div class="form-group">
+                            <p>have an account?<a class="text-primary" asp-action="Login" asp-controller="Account">Log In</a></p>
+                        </div>
+                    </form>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+

@@ -1,0 +1,69 @@
+﻿@model CRUD.Models.ViewModel.LoginSignUpViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout_LogIn.cshtml";
+}
+
+<div class="container col-md-8 offset-2 mt-lg-5" style="border:solid 1px skyblue;">
+    <div class="text-center">
+        <h1 class="text-info showing " style="font-family:'Comic Sans MS';font-weight:bolder;">User Login</h1>
+        <h6 class="text-center text-success">@TempData["SuccessMessage"]</h6>
+    </div>
+    <hr class="text-primary" />
+
+    <div class="col-md-10 offset-1 card mt-5 mb-lg-4 shadow align-content-center ">
+        <div class="boder boder-primary rounded">
+            <div class="card-body">
+                <form method="post" asp-action="Login">
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input type="email" asp-for="Email" placeholder="Enter UserName" class="form-control" />
+                        <span class="text-danger">@TempData["errorEmail"]</span>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Password"></label>
+                        <input type="password" id="password" asp-for="Password" class="form-control" />
+                        <span class="text-danger">@TempData["errorPassword"]</span>
+                        <i id="open" class="bi bi-eye float-right" style="cursor:pointer; margin-top:-32px;margin-right:15px;"></i>
+                        <i id="closed" class="bi bi-eye-slash float-right" style="margin-top: -32px; margin-right: 15px; display: none; cursor: pointer;"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" asp-for="IsRemember" />
+                        <label asp-for="IsRemember"></label>
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="submit" class="btn btn-success btn-lg mb-1  mb-lg-2 form-control " value="Login" />
+                    </div>
+                </form>
+                <div class="text-center">
+                    <a class="text-primary" asp-action="ForgotUsername">ForgotUsername?</a><a class="text-primary" asp-action="ForgotPassword">ForgotPassword?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#open").click(function () {
+            $("#open").hide();
+            $("#closed").show();
+            $("#password").attr("type", "text");
+
+
+        });
+        $("#closed").click(function () {
+            $("#closed").hide();
+            $("#open").show();
+            $("#password").attr("type", "password");
+
+
+        });
+    });
+
+</script>
