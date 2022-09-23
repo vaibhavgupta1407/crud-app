@@ -162,3 +162,4 @@ C:\Users\vaibh\source\repos\CRUD\CRUD\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeA
 C:\Users\vaibh\source\repos\CRUD\CRUD\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\vaibh\source\repos\CRUD\CRUD\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\vaibh\source\repos\CRUD\CRUD\obj\Debug\netcoreapp3.1\Razor\Views\Cascade\CascadeDropdown.cshtml.g.cs
+C:\Users\vaibh\source\repos\CRUD\CRUD\obj\Debug\netcoreapp3.1\Razor\Views\Ajax\Index.cshtml.g.cs
